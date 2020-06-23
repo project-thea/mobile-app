@@ -51,7 +51,7 @@ class Footer extends React.Component {
 			</View>
 			<View style={styles.iconContainer}>
 				<TouchableOpacity
-					onPress={() => this.props.navigation.navigate('Account')}
+					onPress={() => this.props.navigation.navigate('Settings')}
 				>
 					<Icon 
 						name="sliders-h" 

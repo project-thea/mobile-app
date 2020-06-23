@@ -8,12 +8,16 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { store, persistor } from './store';
 import HomeScreen from './src/HomeScreen';
+import SettingsScreen from './src/SettingsScreen';
 
 //Define/configure screens
 const AppNavigator = createStackNavigator({
   Home: {
 	  screen: HomeScreen
   },
+  Settings: {
+	  screen: SettingsScreen
+  }
 },
 {
     initialRouteName: 'Home',

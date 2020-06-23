@@ -4,12 +4,17 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  Dimensions,
+  Image
 } from 'react-native';
 //import Icon from 'react-native-vector-icons/FontAwesome5';
 import { Icon } from 'react-native-elements';
 import Colors from './Colors';
 import Footer from './Footer';
+
+//var uuid = require('react-native-uuid');
+let width = Dimensions.get('window').width
 
 class HomeScreen extends React.Component {
 	static navigationOptions = {
@@ -19,10 +24,13 @@ class HomeScreen extends React.Component {
 	render(){
 		return (
 			<>
+		<View>
+            <Image style={{ height: width, width: width, position: 'absolute', top:0, left:0 }} source={{ uri: 'http://i01.i.aliimg.com/wsphoto/v0/32297951629_5/5pcs-lot-The-Hollowan-Star-Nicolas-Cage-Stylish-Square-Pillowcase-Cushion-Pillow-Cover.jpg' }} />
+        </View>
 			<ScrollView>
 				<View style={{
 				}}>	
-					<Text style={{textAlign: 'center', fontSize: 18, marginTop: 20}}>Click start button to begin tracking</Text>
+					<Text style={{textAlign: 'center', fontSize: 18, marginTop: 20}}>Tap button below to start and stop tracking</Text>
 				</View>
 				
 			<TouchableOpacity
@@ -48,7 +56,8 @@ class HomeScreen extends React.Component {
 			 >
 			   <Icon
 					raised
-					name="play"  
+					//name="play"  
+					name="map-marker"
 					size={40}  
 					type='font-awesome-5' 
 					//name='heartbeat'
@@ -60,10 +69,30 @@ class HomeScreen extends React.Component {
 			  
 				<View style={{
 				}}>	
-					<Text style={{textAlign: 'center', fontSize: 14, marginTop: 10}}>By pressing the above button, you concent to this app collecting your GPS location information</Text>
+					<Text style={{textAlign: 'center', fontSize: 14, marginTop: 10, marginBottom: 10}}>By pressing the above button, you concent to this app collecting your GPS location information</Text>
 				</View>
-				
 
+				
+				<View
+				  style={{
+					borderBottomColor: 'lightgrey',
+					borderBottomWidth: 1,
+				  }}
+				/>
+				
+				
+				<View style={{
+				}}>	
+					<Text style={{textAlign: 'left', fontSize: 18, marginTop: 10, marginHorizontal: 10}}>Current Status: NEGATIVE</Text>
+				</View>
+					
+				
+				<View style={{
+				}}>	
+					<Text style={{textAlign: 'left', fontSize: 18, marginTop: 10, marginHorizontal: 10}}>Next checkpoint: Checkpoint D</Text>
+				</View>
+					
+				
 			</ScrollView>
 			<View style={styles.footerContainer}>
 				<Footer/>
