@@ -25,29 +25,10 @@ class Footer extends React.Component {
 				<Text>Home</Text>
 			</View>
 			<View style={styles.iconContainer}>
-				<TouchableOpacity
-					onPress={() => this.props.navigation.navigate('Trips')}
-				>
-					<Icon 
-						name="list-alt" 
-						type='font-awesome-5' 
-						size={30} 
-						color={Colors.primary} />
-				</TouchableOpacity>
-				<Text>Trips</Text>
+
 			</View>
 			<View style={styles.iconContainer}>
-				<TouchableOpacity
-					onPress={() => this.props.navigation.navigate('Certificates')}
-				>
-					<Icon 
-						type='font-awesome-5' 
-						name="certificate" 
-						type='font-awesome-5' 
-						size={30} 
-						color={Colors.primary} />
-				</TouchableOpacity>
-				<Text>Certificates</Text>
+
 			</View>
 			<View style={styles.iconContainer}>
 				<TouchableOpacity
@@ -71,7 +52,8 @@ const styles = StyleSheet.create({
   container: {
 	  flexDirection: "row",
 	  borderTopColor: "#e1e1e1",
-	  borderTopWidth: 1
+	  borderTopWidth: 1,
+	  backgroundColor: '#ffffff'
   },
   iconContainer: {
 	  justifyContent: 'center',

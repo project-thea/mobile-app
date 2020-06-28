@@ -9,6 +9,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { store, persistor } from './store';
 import HomeScreen from './src/HomeScreen';
 import SettingsScreen from './src/SettingsScreen';
+import AboutScreen from './src/AboutScreen';
+import PreventionScreen from './src/PreventionScreen';
+import ServerSettingsScreen from './src/ServerSettingsScreen';
 
 //Define/configure screens
 const AppNavigator = createStackNavigator({
@@ -17,7 +20,16 @@ const AppNavigator = createStackNavigator({
   },
   Settings: {
 	  screen: SettingsScreen
-  }
+  },
+  About: {
+	  screen: AboutScreen
+  },
+  Prevention: {
+	  screen: PreventionScreen
+  },
+  ServerSettings: {
+	  screen: ServerSettingsScreen
+  }  
 },
 {
     initialRouteName: 'Home',

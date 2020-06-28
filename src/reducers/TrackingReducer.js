@@ -5,11 +5,21 @@ import {
 } from '../actions/TrackingActions';
 
 const initialState = {
-	
+	tracking: false
 }
 
-export default function auth (state = initialState, action) {
+export default function tracking (state = initialState, action) {
   switch (action.type) {
+	  case START_TRACKING:
+		return {
+			...state,
+			tracking: true
+		}
+	  case STOP_TRACKING:
+		return {
+			...state,
+			tracking: false
+		}
 	  default:
 		return state;
   }

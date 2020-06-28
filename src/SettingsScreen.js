@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   View,
   Text,
@@ -19,7 +20,6 @@ import Colors from './Colors';
 
 class SettingsScreen extends React.Component {
 	static navigationOptions = {
-		//headerShown: false,
 		title: 'Settings',
 	};
 	
@@ -35,8 +35,7 @@ class SettingsScreen extends React.Component {
 						name: 'user',
 						iconStyle:{color: Colors.primary}
 					}}
-					//onPress={() => this.props.navigation.navigate('Points')}
-					subtitle="710b962e-041c-11e1-9234-0123456789ab-00"
+					subtitle={this.props.uuid}
 				/>
 				
 				
@@ -48,7 +47,7 @@ class SettingsScreen extends React.Component {
 						name: 'upload',
 						iconStyle:{color: Colors.primary}
 					}}
-					subtitle="https://collect.project-thea.org"
+					subtitle={this.props.uploadURL}
 				/>
 				
 				<ListItem
@@ -110,11 +109,11 @@ class SettingsScreen extends React.Component {
 						title="About"
 						chevron={true}
 						leftIcon={{
-							type:'font-awesome',
+							type:'font-awesome-5',
 							name: 'info-circle',
 							iconStyle:{color: Colors.primary}
 						}}
-						
+						onPress={() => this.props.navigation.navigate('About')}
 						subtitle="About Project-THEA"
 					/>
 					
@@ -123,4 +122,11 @@ class SettingsScreen extends React.Component {
 }
 
 
-export default SettingsScreen;
+function mapStateToProps(state) { 
+	return {
+		uuid: state.settings.uuid,
+		uploadURL: state.settings.uploadURL
+	}
+}
+
+export default connect(mapStateToProps)(SettingsScreen);
